@@ -1,8 +1,5 @@
-import sys
-from ecommerce_churn_ltv.logger import logging
 
-
-def error_message_detail(error: Exception, error_detail: sys) -> str:
+def error_message_detail(error: Exception, error_detail) -> str:
     """Extracts detailed information from an exception including file name,
 
     line number, and the error message.
@@ -30,7 +27,7 @@ class CustomException(Exception):
     Formats and logs detailed error traces automatically.
     """
 
-    def __init__(self, error_message: Exception, error_detail: sys):
+    def __init__(self, error_message: Exception, error_detail):
         # Pass the string representation of error to the superclass initializer
         super().__init__(str(error_message))
 
@@ -43,10 +40,11 @@ class CustomException(Exception):
         # Returns the detailed error string when str(e) or raise is called
         return self.error_message
 
-if __name__ == "__main__":
-    try:
-        # Intentional divide-by-zero error to test the exception handler
-        a = 1 / 0
-    except Exception as e:
-        logging.info("Testing CustomException handling...")
-        raise CustomException(e, sys)
+# if __name__ == "__main__":
+#     try:
+#         # Intentional divide-by-zero error to test the exception handler
+#         a = 1 / 0
+#     except Exception as e:
+#         logging.info("Testing CustomException handling...")
+#         raise CustomException(e, sys)
+

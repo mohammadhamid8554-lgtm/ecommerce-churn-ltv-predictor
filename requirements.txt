@@ -4,4 +4,15 @@ seaborn
 matplotlib
 scikit-learn
 catboost
-ssetuptools
+setuptools
+imbalanced-learn
+uvicorn
+pydantic
+streamlit
+mlflow
+joblib
+requests
+pytest
+black
+fastapi
+-e .
