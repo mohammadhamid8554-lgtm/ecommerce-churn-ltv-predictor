@@ -7,7 +7,7 @@ from ecommerce_churn_ltv.exception import CustomException
 from sklearn.metrics import f1_score, precision_score, recall_score, roc_auc_score
 
 
-def save_obj(file_path: str, obj: object) -> None:
+def save_object(file_path: str, obj: object) -> None:
     """
     Saves a Python object(e.g., preprocessor, ML model) as a serialized pickle (.pkl) file.
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     test_path = "artifacts/test_utils.pkl"
 
     # Test saving
-    save_obj(test_path, test_dict)
+    save_object(test_path, test_dict)
 
     # Test loading
     loaded_data = load_object(test_path)
