@@ -34,3 +34,15 @@ In e-commerce, acquiring new customers costs **5x to 7x more** than retaining ex
 │ Streamlit UI   │ ◄── │ FastAPI REST Service │ ◄──────────────┘ Model Artifact
 │ Control Center │     │  (/predict Endpoint) │                  (joblib)
 └────────────────┘     └──────────────────────┘
+
+## 🚀 Application Screenshots
+
+### 1. Interactive Streamlit Analytics Dashboard
+![Streamlit Dashboard](docs/dashboard.png)
+
+### 2. FastAPI Interactive Swagger API Documentation
+![FastAPI Docs](docs/fastapi_docs.png)
+
+## 📊 Application Dashboard
+
+![E-Commerce Churn Prediction Dashboard](images/dashboard.png)
