@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 import requests
 import pandas as pd
@@ -14,7 +16,13 @@ st.markdown("Enterprise decision engine for customer retention and RFM risk scor
 
 # Sidebar Navigation & Endpoint Config
 st.sidebar.header("Configuration")
-api_url = st.sidebar.text_input("FastAPI Endpoint URL", value="http://127.0.0.1:8000/predict")
+api_url = st.sidebar.text_input(
+    "FastAPI Endpoint URL",
+    value=os.getenv(
+        "API_URL",
+        "https://ecommerce-churn-ltv-predictor.onrender.com/predict",
+    ),
+)
 
 st.sidebar.markdown("---")
 st.sidebar.info("Adjust the customer metrics below to evaluate churn risk in real-time.")

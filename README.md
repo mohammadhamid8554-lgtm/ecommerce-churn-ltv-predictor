@@ -33,6 +33,25 @@ In e-commerce, acquiring new customers costs **5x to 7x more** than retaining ex
 │ Streamlit UI   │ ◄── │ FastAPI REST Service │ ◄──────────────┘ Model Artifact
 │ Control Center │     │  (/predict Endpoint) │                  (joblib)
 └────────────────┘     └──────────────────────┘
+```
+
+## 🚀 Deploying to Render
+
+Deploy the API and Streamlit dashboard as two Render Web Services from this repository.
+
+### FastAPI service
+
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
+- **Health Check Path:** `/`
+
+### Streamlit dashboard
+
+- **Build Command:** `pip install -r requirements.txt`
+- **Start Command:** `streamlit run app.py --server.address 0.0.0.0 --server.port $PORT`
+- **Environment Variable:** `API_URL` = the FastAPI service URL ending in `/predict`, for example `https://ecommerce-churn-ltv-predictor.onrender.com/predict`
+
+The dashboard defaults to the deployed API URL shown above when `API_URL` is not set. You can also change the endpoint in the dashboard sidebar.
 
 ## 🚀 Application Screenshots
 
